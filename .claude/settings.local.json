@@ -7,7 +7,16 @@
       "Bash(git add:*)",
       "Bash(git commit:*)",
       "Bash(git push:*)",
-      "Bash(npm run build:*)"
+      "Bash(npm run build:*)",
+      "Bash(grep:*)",
+      "Bash(ls:*)",
+      "Bash(for:*)",
+      "Bash(do sed:*)",
+      "Bash(perl:*)",
+      "Bash(do:*)",
+      "Bash(done)",
+      "Bash(git checkout:*)",
+      "Bash(git restore:*)"
     ]
   }
 }

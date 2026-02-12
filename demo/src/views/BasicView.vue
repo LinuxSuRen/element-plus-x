@@ -29,7 +29,7 @@
     { prop: 'name', label: 'Name' },
     { prop: 'email', label: 'Email' },
     { prop: 'status', label: 'Status' }
-  ]"
+  ]
   :data-loader="dataLoader"
 /&gt;</code></pre>
     </el-card>
@@ -38,8 +38,8 @@
 
 <script setup lang="ts">
 import { ref } from 'vue'
-import { PaginationTable } from 'element-plus-x/PaginationTable.vue'
-import type { Column } from 'element-plus-x/PaginationTable.vue'
+import { PaginationTable } from 'element-plus-x'/PaginationTable.vue'
+import type { Column } from 'element-plus-x'/PaginationTable.vue'
 
 const columns: Column[] = [
   { prop: 'id', label: 'ID', width: 80 },
@@ -48,7 +48,6 @@ const columns: Column[] = [
   { prop: 'status', label: 'Status' }
 ]
 
-// Mock data
 const mockUsers = Array.from({ length: 105 }, (_, i) => ({
   id: i + 1,
   name: `User ${i + 1}`,
@@ -79,7 +78,7 @@ const dataLoader = async ({ page, page_size }: { page: number; page_size: number
 }
 
 .view-header {
-  margin-bottom: 20px;
+  margin-bottom: 8px;
 }
 
 .view-header h2 {
@@ -90,6 +89,7 @@ const dataLoader = async ({ page, page_size }: { page: number; page_size: number
 .view-header p {
   margin: 0;
   color: #909399;
+  font-size: 14px;
 }
 
 .demo-card {

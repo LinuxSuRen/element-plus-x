@@ -112,8 +112,8 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 import { ElMessage } from 'element-plus'
-import { PaginationTable } from 'element-plus-x/PaginationTable.vue'
-import type { Column, PaginationData } from 'element-plus-x/PaginationTable.vue'
+import { PaginationTable } from 'element-plus-x'/PaginationTable.vue'/'
+import type { Column, PaginationData } from 'element-plus-x'/PaginationTable.vue'/'
 
 interface User {
   id: number
