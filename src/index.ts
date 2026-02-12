@@ -9,12 +9,25 @@ export type {
   DeleteHandler
 } from './types'
 
+// Types
+export type {
+  PaginationData,
+  SearchKind,
+  SelectOption,
+  Column,
+  PaginationTableConfig,
+  DataLoader,
+  DeleteHandler
+} from './types'
+
 // Component
 import PaginationTable from './PaginationTable.vue'
 import type { PaginationTableProps } from './PaginationTable.vue'
 
-// Re-export component as default (for library consumers)
-export { PaginationTable as default }
+// Export component as named export (not default)
+export { PaginationTable }
+
+// Re-export types
 export type { PaginationTableProps } from './PaginationTable.vue'
 
 // Composable
