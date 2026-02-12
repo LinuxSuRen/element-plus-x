@@ -1,11 +1,3 @@
-// Component
-import PaginationTable from './PaginationTable.vue'
-import type { PaginationTableProps } from './PaginationTable.vue'
-
-// Composable
-export { usePaginationTable } from './usePaginationTable'
-export type { UsePaginationTableOptions, UsePaginationTableReturn } from './usePaginationTable'
-
 // Types
 export type {
   PaginationData,
@@ -17,9 +9,13 @@ export type {
   DeleteHandler
 } from './types'
 
-// Export component
-export { PaginationTable }
-export default PaginationTable
+// Export component (named export only)
+export { PaginationTable } from './PaginationTable.vue'
+export type { PaginationTableProps } from './PaginationTable.vue'
+
+// Composable
+export { usePaginationTable } from './usePaginationTable'
+export type { UsePaginationTableOptions, UsePaginationTableReturn } from './usePaginationTable'
 
 // Vue plugin for global registration
 import type { App } from 'vue'

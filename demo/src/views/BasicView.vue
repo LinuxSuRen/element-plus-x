@@ -38,8 +38,8 @@
 
 <script setup lang="ts">
 import { ref } from 'vue'
-import { PaginationTable } from 'element-plus-x'
-import type { Column } from 'element-plus-x'
+import { PaginationTable } from 'element-plus-x/PaginationTable.vue'
+import type { Column } from 'element-plus-x/PaginationTable.vue'
 
 const columns: Column[] = [
   { prop: 'id', label: 'ID', width: 80 },
