@@ -7,18 +7,15 @@ export default defineConfig({
   resolve: {
     alias: {
       '@': resolve(__dirname, './src')
-    },
-    // In CI, add library parent dir to resolve paths
-    // This allows 'element-plus-x' imports to work correctly
+    }
+  },
+  // In CI, externalize the library to prevent bundling issues
+  build: {
     ...(process.env.CI ? {
-      dedupe: {
-        'element-plus-x': resolve(__dirname, '../src')
+      rollupOptions: {
+        external: ['element-plus-x', /^element-plus-x\/.*/]
       }
-    } : {
-      alias: {
-        'element-plus-x': resolve(__dirname, '../src')
-      }
-    })
+    } : {})
   },
   // Base path for GitHub Pages - change 'element-plus-x' to your repo name
   base: process.env.NODE_ENV === 'production' ? '/element-plus-x/' : '/',
@@ -26,9 +23,7 @@ export default defineConfig({
     port: 3000,
     open: true
   },
-  build: {
-    outDir: 'dist',
-    assetsDir: 'assets',
-    sourcemap: false
-  }
+  outDir: 'dist',
+  assetsDir: 'assets',
+  sourcemap: false
 })
