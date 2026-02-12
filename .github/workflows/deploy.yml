@@ -4,8 +4,10 @@ on:
   push:
     branches: [master]
     paths:
-      - 'demo/**'
+      - 'demo/**/*.{vue,ts}'
+      - 'src/**'
       - '.github/workflows/deploy.yml'
+      - 'demo/vite.config.ts'
   workflow_dispatch:
 
 permissions:
