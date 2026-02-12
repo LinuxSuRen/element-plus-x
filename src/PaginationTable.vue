@@ -125,6 +125,11 @@ import type {
   DataLoader,
   DeleteHandler
 } from './types'
+
+// Define component name for library export
+defineOptions({
+  name: 'EpxPaginationTable'
+})
 import { usePaginationTable } from './usePaginationTable'
 
 export interface PaginationTableProps {
