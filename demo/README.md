@@ -87,7 +87,7 @@ npm run preview
 
 ## Deploy to GitHub Pages
 
-The demo is automatically deployed to GitHub Pages when you push to the `main` branch.
+The demo is automatically deployed to GitHub Pages when you push to the `master` branch.
 
 ### Manual Deployment
 
