@@ -6,7 +6,7 @@
         <el-col
           v-for="field in searchFields"
           :key="field.prop"
-          :span="searchColSpan ?? 4"
+          :span="computedColSpan"
         >
           <!-- Date picker -->
           <el-date-picker
@@ -18,6 +18,7 @@
             value-format="YYYY-MM-DDTHH:mm:ss[Z]"
             @change="loadData"
             clearable
+            style="width: 100%"
           />
           <!-- Select -->
           <el-select
@@ -44,7 +45,7 @@
             clearable
           />
         </el-col>
-        <el-col :span="buttonColSpan ?? 4">
+        <el-col :span="buttonColSpan ?? computedColSpan" class="epx-button-col">
           <el-button type="primary" @click="loadData">
             {{ searchButtonText }}
           </el-button>
@@ -214,6 +215,18 @@ const hasSearchBar = computed(() => {
   return searchFields.value.length > 0
 })
 
+// Calculate column span based on number of search fields
+const computedColSpan = computed(() => {
+  if (props.searchColSpan) return props.searchColSpan
+
+  const fieldCount = searchFields.value.length
+  // Element Plus grid has 24 columns total
+  // Calculate span to fit all fields + buttons in one row if possible
+  if (fieldCount <= 3) return 6  // 4 fields * 6 = 24
+  if (fieldCount <= 5) return 4  // 6 fields * 4 = 24
+  return 3  // 8+ fields * 3 = 24
+})
+
 const showActions = computed(() => {
   return props.deleteKey || !!slots.actions
 })
@@ -266,6 +279,20 @@ if (props.autoInit) {
 
 .epx-search-bar {
   margin-bottom: 12px;
+  padding: 12px;
+  background: #f5f7fa;
+  border-radius: 4px;
+}
+
+.epx-button-col {
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.epx-button-col :deep(.el-button) {
+  margin-bottom: 8px;
 }
 
 .epx-pagination-container {
