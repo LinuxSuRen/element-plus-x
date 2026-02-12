@@ -124,8 +124,8 @@ import type {
   Column,
   DataLoader,
   DeleteHandler
-} from './types'
-import { usePaginationTable } from './usePaginationTable'
+} from 'element-plus-x/types'
+import { usePaginationTable } from 'element-plus-x/usePaginationTable'
 
 export interface PaginationTableProps {
   columns: Column[]
