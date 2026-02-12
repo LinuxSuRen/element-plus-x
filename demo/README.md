@@ -2,7 +2,7 @@
 
 Live demo application showcasing the PaginationTable component.
 
-**Live Demo:** [View on GitHub Pages](https://your-username.github.io/element-plus-x/)
+**Live Demo:** [View on GitHub Pages](https://LinuxSuRen.github.io/element-plus-x/)
 
 ## Quick Start
 

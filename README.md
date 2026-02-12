@@ -2,11 +2,11 @@
 
 Extension components for [Element Plus](https://element-plus.org/).
 
-[![Live Demo](https://img.shields.io/badge/Demo-GitHub_Pages-3f51b5?logo=github)](https://your-username.github.io/element-plus-x/)
+[![Live Demo](https://img.shields.io/badge/Demo-GitHub_Pages-3f51b5?logo=github)](https://LinuxSuRen.github.io/element-plus-x/)
 
 ## Live Demo
 
-**Online Demo:** [View on GitHub Pages](https://your-username.github.io/element-plus-x/)
+**Online Demo:** [View on GitHub Pages](https://LinuxSuRen.github.io/element-plus-x/)
 
 Or run locally:
 
