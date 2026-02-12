@@ -117,7 +117,7 @@
   </div>
 </template>
 
-<script setup lang="ts">
+<script lang="ts">
 import { computed, ref } from 'vue'
 import { ElMessageBox, ElMessage } from 'element-plus'
 import type {
@@ -125,49 +125,26 @@ import type {
   DataLoader,
   DeleteHandler
 } from './types'
-
-// Define component name for library export
-defineOptions({
-  name: 'EpxPaginationTable'
-})
 import { usePaginationTable } from './usePaginationTable'
 
 export interface PaginationTableProps {
-  /** Table columns definition */
   columns: Column[]
-  /** Function to load paginated data */
   dataLoader: DataLoader
-  /** Optional custom delete handler */
   deleteHandler?: DeleteHandler
-  /** Property name for delete key (shows delete button if set) */
   deleteKey?: string
-  /** Page size options */
   pageSizes?: number[]
-  /** Pagination layout */
   paginationLayout?: string
-  /** Additional props for el-pagination */
   paginationProps?: Record<string, any>
-  /** Span for search field columns */
   searchColSpan?: number
-  /** Span for button column */
   buttonColSpan?: number
-  /** Text for search button */
   searchButtonText?: string
-  /** Text for reset button */
   resetButtonText?: string
-  /** Text for delete button */
   deleteButtonText?: string
-  /** Label for actions column */
   actionLabel?: string
-  /** Width for actions column */
   actionWidth?: number
-  /** Whether actions column is fixed */
   actionFixed?: boolean | 'left' | 'right'
-  /** Minimum total to show pagination (0 = always show) */
   paginationMinTotal?: number
-  /** Auto-initialize on mount */
   autoInit?: boolean
-  /** Delete confirmation message */
   deleteConfirmMessage?: string
 }
 
@@ -220,18 +197,6 @@ const hasSearchBar = computed(() => {
   return searchFields.value.length > 0
 })
 
-// Calculate column span based on number of search fields
-const computedColSpan = computed(() => {
-  if (props.searchColSpan) return props.searchColSpan
-
-  const fieldCount = searchFields.value.length
-  // Element Plus grid has 24 columns total
-  // Calculate span to fit all fields + buttons in one row if possible
-  if (fieldCount <= 3) return 6  // 4 fields * 6 = 24
-  if (fieldCount <= 5) return 4  // 6 fields * 4 = 24
-  return 3  // 8+ fields * 3 = 24
-})
-
 const showActions = computed(() => {
   return props.deleteKey || !!slots.actions
 })
@@ -275,6 +240,9 @@ const handleDeleteClick = async (row: any) => {
 if (props.autoInit) {
   init()
 }
+
+// Default export for library distribution
+export default { name: 'EpxPaginationTable' }
 </script>
 
 <style scoped>
