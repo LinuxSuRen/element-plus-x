@@ -86,8 +86,8 @@
 <script setup lang="ts">
 import { ref, reactive } from 'vue'
 import { ElMessage } from 'element-plus'
-import { PaginationTable } from 'element-plus-x'/PaginationTable.vue'/'
-import type { Column } from 'element-plus-x'/PaginationTable.vue'/'
+import { PaginationTable } from 'element-plus-x'
+import type { Column } from 'element-plus-x'
 
 const tableRef = ref()
 const tasks = ref(

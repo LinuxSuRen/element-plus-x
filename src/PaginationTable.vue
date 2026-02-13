@@ -117,15 +117,15 @@
   </div>
 </template>
 
-<script lang="ts">
-import { computed, ref } from 'vue'
+<script setup lang="ts">
+import { computed } from 'vue'
 import { ElMessageBox, ElMessage } from 'element-plus'
 import type {
   Column,
   DataLoader,
   DeleteHandler
-} from 'element-plus-x/types'
-import { usePaginationTable } from 'element-plus-x/usePaginationTable'
+} from './types'
+import { usePaginationTable } from './usePaginationTable'
 
 export interface PaginationTableProps {
   columns: Column[]
@@ -208,6 +208,13 @@ const showPagination = computed(() => {
   return (paginationData.value?.total ?? 0) >= props.paginationMinTotal
 })
 
+const computedColSpan = computed(() => {
+  const fieldCount = searchFields.value.length
+  if (fieldCount <= 3) return 6
+  if (fieldCount <= 6) return 4
+  return 3
+})
+
 const slots = defineSlots<{
   [key: string]: any
 }>()
@@ -241,8 +248,10 @@ if (props.autoInit) {
   init()
 }
 
-// Default export for library distribution
-export default { name: 'EpxPaginationTable' }
+// Define options for component name
+defineOptions({
+  name: 'EpxPaginationTable'
+})
 </script>
 
 <style scoped>

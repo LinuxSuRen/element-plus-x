@@ -1,5 +1,5 @@
 import { ref, reactive, onMounted, type Ref } from 'vue'
-import type { PaginationData, DataLoader, DeleteHandler, PaginationTableConfig } from 'element-plus-x/types'
+import type { PaginationData, DataLoader, DeleteHandler, PaginationTableConfig } from './types'
 
 export interface UsePaginationTableOptions {
   /** Function to load paginated data */
